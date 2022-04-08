@@ -6,36 +6,47 @@ class FavoriteIcon extends StatefulWidget {
   @override
   _FavoriteIconState createState() => _FavoriteIconState();
 }
- 
+
 class _FavoriteIconState extends State<FavoriteIcon> {
   bool _isFavorite = false;
- 
+
+  void setFavorite() {
+    setState(() {
+      _isFavorite = !_isFavorite;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return (_isFavorite)
-        ? IconButton(
-            icon: const Icon(
-              Icons.star,
-              size: 34,
-              color: Color(0xffFFD644),
-            ),
-            onPressed: () {
-              setState(() {
-                _isFavorite = !_isFavorite;
-              });
-            },
+        ? Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.star,
+                  size: 28,
+                  color: Color(0xffFFD644),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.star_outline_rounded,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                onPressed: setFavorite,
+              )
+            ],
           )
         : IconButton(
             icon: const Icon(
-              Icons.star_border_outlined,
+              Icons.star_outline_rounded,
               size: 34,
               color: Colors.white,
             ),
-            onPressed: () {
-              setState(() {
-                _isFavorite = !_isFavorite;
-              });
-            },
+            onPressed: setFavorite,
           );
   }
 }
@@ -139,6 +150,7 @@ class DetailPage extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         child: InkWell(
+                          onTap: () {},
                           child: Ink(
                             child: const Padding(
                                 padding: EdgeInsets.symmetric(

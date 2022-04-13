@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_lab1/container.dart';
-import 'package:flutter_lab1/column.dart';
-// import 'package:flutter_lab1/flex.dart';
-import 'package:flutter_lab1/stack.dart';
-import 'package:flutter_lab1/listview.dart';
-// import 'package:flutter_lab1/listviewbuilder.dart';
-import 'package:flutter_lab1/home.dart';
-import 'package:flutter_lab1/detail.dart';
+import 'package:flutter_lab1/views/on_hands_lab/hello.dart';
+// import 'package:flutter_lab1/views/assignment/home.dart';
+// import 'package:flutter_lab1/views/examples/column.dart';
+// import 'package:flutter_lab1/views/examples/detail.dart';
+// import 'package:flutter_lab1/views/examples/form_validation.dart';
+// import 'package:flutter_lab1/views/examples/home.dart';
+// import 'package:flutter_lab1/views/examples/listview.dart';
+// import 'package:flutter_lab1/views/examples/stack.dart';
+import 'package:flutter_lab1/views/on_hands_lab/landing.dart';
+import 'package:flutter_lab1/views/on_hands_lab/login_food.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,17 +24,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => const HomePage(),
-        '/columnPage': (context) => const ColumnPage(),
-        '/listview': (context) => const ListViewPage(),
-        '/stack': (context) => const StackPage(),
-        '/detail': (context) => const DetailPage(),
+        // ASSIGNMENT
+        // '/': (context) => const HomePage(),
+
+        // ON HANDS LAB
+        '/': (context) => const LandingPage(),
+        '/login':(context) => const LoginFoodPage(),
+        '/hello':(context) => const HelloPage(),
+
+        // EXAMPLES
+        // '/': (context) => const HomePage2(),
+        // '/columnPage': (context) => const ColumnPage(),
+        // '/listview': (context) => const ListViewPage(),
+        // '/stack': (context) => const StackPage(),
+        // '/detail': (context) => const DetailPage(),
+        // '/login':(context) => FormValidationPage(),
     },
-//      home: ListViewBuilderPage(),
     );
   }
 }

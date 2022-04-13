@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage1 extends StatelessWidget {
-  const HomePage1({Key? key}) : super(key: key);
+class LandingPage extends StatelessWidget {
+  const LandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class HomePage1 extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.centerRight,
-                child: Image.asset("assets/imgs/food.png", width: 330),
+                child: Image.asset("assets/imgs/food.png", width: 250),
               ),
               const SizedBox(height: 20),
               const Text('Foodienator',
@@ -39,7 +39,7 @@ class HomePage1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                      onTap: () => {},
+                      onTap: () => Navigator.pushNamed(context, "/login"),
                       child: Ink(
                         decoration: const BoxDecoration(
                             boxShadow: [

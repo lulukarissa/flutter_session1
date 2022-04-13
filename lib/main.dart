@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lab1/constants/theme.dart';
+import 'package:flutter_lab1/providers/theme_provider.dart';
 import 'package:flutter_lab1/views/assignment/detail.dart';
 // import 'package:flutter_lab1/views/on_hands_lab/hello.dart';
 import 'package:flutter_lab1/views/assignment/home.dart';
@@ -16,19 +18,15 @@ void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bool isDarkMode = ref.watch(themeProvider).isDarkMode;
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // scaffoldBackgroundColor: const Color(0xff000000),
-        fontFamily: 'Poppins',
-        primarySwatch: Colors.blue,
-      ),
-      darkTheme: ThemeData.dark(),
+      theme: isDarkMode ? darkThemeData : lightThemeData,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         // ASSIGNMENT

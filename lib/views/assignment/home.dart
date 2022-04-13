@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+import 'package:flutter_lab1/providers/theme_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,16 +10,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          iconTheme: const IconThemeData(color: Color(0xff2A3640)),
           title: const Text('Beepy',
               style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                  color: Colors.black)),
+                  fontSize: 20)),
         ),
         body: Container(
             margin: const EdgeInsets.only(top: 40),
@@ -37,36 +33,27 @@ class HomePage extends StatelessWidget {
                     children: const [
                       Text('Find Your Vehicle',
                           style: TextStyle(
-                              fontFamily: 'Poppins',
                               fontWeight: FontWeight.w600,
-                              fontSize: 24,
-                              color: Colors.black)),
+                              fontSize: 24)),
                       Text('Find the perfect vehicle for every occasion!',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontFamily: 'Poppins',
                               fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                              color: Colors.black)),
+                              fontSize: 16)),
                     ],
                   ),
                 )),
-                ToggleSwitch(
-                  minWidth: 40.0,
-                  cornerRadius: 20.0,
-                  activeBgColors: const [
-                    [Colors.white],
-                    [Colors.white],
-                  ],
-                  inactiveBgColor: Colors.grey,
-                  inactiveFgColor: Colors.white,
-                  initialLabelIndex: 1,
-                  totalSwitches: 2,
-                  radiusStyle: true,
-                  onToggle: (index) {
-                    print('switched to: $index');
-                  },
-                ),
+                Container(
+                    padding: const EdgeInsets.all(20),
+                    child: Consumer(builder: ((context, ref, child) {
+                      return CupertinoSwitch(
+                        value: ref.watch(themeProvider).isDarkMode,
+                        onChanged: (bool value) {
+                          ref.read(themeProvider.notifier).setTheme(value);
+                        },
+                        activeColor: const Color(0xffEB5757),
+                      );
+                    }))),
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(40),

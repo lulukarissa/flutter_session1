@@ -58,16 +58,10 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          iconTheme: const IconThemeData(color: Color(0xff2A3640)),
           title: const Text('Cars',
               style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                  color: Colors.black)),
+                  fontSize: 20)),
           actions: [
             Padding(
               padding: const EdgeInsets.all(10),

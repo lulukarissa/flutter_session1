@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,26 +31,42 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 30),
                 Expanded(
                     child: Container(
-                    width: 300,
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: const [
-                        Text('Find Your Vehicle',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 24,
-                                color: Colors.black)),
-                        Text('Find the perfect vehicle for every occasion!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                                color: Colors.black)),
-                      ],
+                  width: 300,
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: const [
+                      Text('Find Your Vehicle',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                              color: Colors.black)),
+                      Text('Find the perfect vehicle for every occasion!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                              color: Colors.black)),
+                    ],
                   ),
                 )),
+                ToggleSwitch(
+                  minWidth: 40.0,
+                  cornerRadius: 20.0,
+                  activeBgColors: const [
+                    [Colors.white],
+                    [Colors.white],
+                  ],
+                  inactiveBgColor: Colors.grey,
+                  inactiveFgColor: Colors.white,
+                  initialLabelIndex: 1,
+                  totalSwitches: 2,
+                  radiusStyle: true,
+                  onToggle: (index) {
+                    print('switched to: $index');
+                  },
+                ),
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(40),

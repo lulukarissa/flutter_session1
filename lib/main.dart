@@ -4,6 +4,7 @@ import 'package:flutter_lab1/providers/theme_provider.dart';
 import 'package:flutter_lab1/views/assignment/detail.dart';
 // import 'package:flutter_lab1/views/on_hands_lab/hello.dart';
 import 'package:flutter_lab1/views/assignment/home.dart';
+import 'package:flutter_lab1/views/assignment/list.dart';
 // import 'package:flutter_lab1/views/examples/column.dart';
 // import 'package:flutter_lab1/views/examples/form_validation.dart';
 // import 'package:flutter_lab1/views/examples/home.dart';
@@ -32,6 +33,7 @@ class MyApp extends ConsumerWidget {
         // ASSIGNMENT
         '/': (context) => const HomePage(),
         '/detail': (context) => const DetailPage(),
+        '/list': (context) => ListPage(),
 
         // ON HANDS LAB
         // '/': (context) => const LandingPage(),

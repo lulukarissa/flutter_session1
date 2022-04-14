@@ -70,6 +70,10 @@ flutter:
     - assets/imgs/car2.png
     - assets/imgs/ava.png
     - assets/imgs/man.png
+    - assets/imgs/carlist1.png
+    - assets/imgs/carlist2.png
+    - assets/imgs/carlist3.png
+    - assets/imgs/carlist4.png
 
   fonts:
     - family: Poppins

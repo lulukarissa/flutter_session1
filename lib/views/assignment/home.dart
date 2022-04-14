@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.all(40),
                   child: InkWell(
-                    onTap: () => Navigator.pushNamed(context, '/detail'),
+                    onTap: () => Navigator.pushNamed(context, '/list'),
                     child: Ink(
                       decoration: const BoxDecoration(
                           color: Color(0xffFA7F35),

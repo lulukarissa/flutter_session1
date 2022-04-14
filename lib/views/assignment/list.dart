@@ -109,49 +109,49 @@ class ListPage extends StatelessWidget {
             margin: const EdgeInsets.all(30),
             child: Column(
               children: [
-                Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 30),
-                      width: double.infinity,
-                      child: InkWell(
-                        onTap: () => Navigator.pushNamed(context, '/detail'),
-                        child: Ink(
-                          decoration: const BoxDecoration(
-                              color: Color(0xff60B5F4),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          child: Padding(
-                              padding: const EdgeInsets.all(20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text('Sport Car',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 24,
-                                          color: Colors.white)),
-                                  Text('\$55/day',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14,
-                                          color: Colors.white)),
-                                  SizedBox(height: 20),
-                                  FavoriteIcon(),
-                                ],
-                              )),
+                InkWell(
+                    onTap: () => Navigator.pushNamed(context, '/detail'),
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          width: double.infinity,
+                          child: Ink(
+                            decoration: const BoxDecoration(
+                                color: Color(0xff60B5F4),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text('Sport Car',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 24,
+                                            color: Colors.white)),
+                                    Text('\$55/day',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Colors.white)),
+                                    SizedBox(height: 20),
+                                    FavoriteIcon(),
+                                  ],
+                                )),
+                          ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 20),
-                      child: Image.asset("assets/imgs/car2.png", width: 180),
-                    )
-                  ],
-                )
+                        Container(
+                          margin: const EdgeInsets.only(right: 20),
+                          child:
+                              Image.asset("assets/imgs/car2.png", width: 180),
+                        )
+                      ],
+                    )),
                 // _carList.map((Map data) {
                 //   return Stack(
                 //     alignment: Alignment.bottomRight,

@@ -29,7 +29,6 @@ final ThemeData lightThemeData = ThemeData(
   appBarTheme: _appBarTheme.copyWith(
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
-      color: Colors.black,
       titleTextStyle:
           const TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black),
       iconTheme: const IconThemeData(color: Colors.black)),
@@ -53,7 +52,6 @@ final ThemeData darkThemeData = ThemeData(
   appBarTheme: _appBarTheme.copyWith(
       backgroundColor: Colors.black,
       foregroundColor: Colors.white,
-      color: Colors.white,
       titleTextStyle:
           const TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: Colors.white),
       iconTheme: const IconThemeData(color: Colors.white)),
